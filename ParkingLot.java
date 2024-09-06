@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class for parking lots
+ * Class for parking lots and has to be called for most info
  * 
  * @author Sy Traore and Byron Streit
  * @version 2024.09.06
@@ -16,7 +16,6 @@ public class ParkingLot {
      * Creates "slots" array list and finds number of slots per floor for specific parking lot
      * Then adds vehicle-specific slots up until the number of slots per floor
      * Then does the same for all floors within the parking lot
-     * 
      * @param parkingLotId
      *      ID of the entire parking lot
      * @param nfloors
@@ -40,9 +39,8 @@ public class ParkingLot {
         }
     }
 
-       /**
+    /**
      * Method to find closest slot, occupy it, and assign ticketId to slot
-     * 
      * @param type 
      *      type of vehicle (truck, bike, car)
      * @param regNo
@@ -70,17 +68,16 @@ public class ParkingLot {
     }
 
             
-        /**
-         * Method to generate ticket ID
-         * 
-         * @param flr 
-         *      floor of parking slot
-         * @param slno
-         *      slot number of parking slot
-         */
-        private String generateTicketId(int flr, int slno) {
-            return parkingLotId + "_" + flr + "_" + slno;
-        }
+    /**
+     * Method to generate ticket ID
+     * @param flr 
+     *      floor of parking slot
+     * @param slno
+     *      slot number of parking slot
+     */
+    private String generateTicketId(int flr, int slno) {
+        return parkingLotId + "_" + flr + "_" + slno;
+    }
 
     // Method to unpark vehicles and mark slot available again
     public void unPark(String ticketId) {
@@ -96,6 +93,52 @@ public class ParkingLot {
                     slot.setTicketId(null);
                     System.out.println("Unparked vehicle");
                 }
+            }
+        }
+    }
+
+    // Display Options -----------------------------------------
+
+    /**
+     * Return the number of open slots for a vehicle type
+     * @param type type of vehicle
+     * @return number of open slots for a vehicle type
+     */
+    int getNoOfOpenSlots(String type) {
+        int count = 0;
+        for(List<Slot> floor: slots) {
+            for (Slot slot: floor) {
+                if (slot.getVehicle() == null && slot.getType().equals(type)) count++;
+            }
+        }
+
+        return count;
+    }
+
+    /**
+     * Display all the open slots for a vehicle type
+     * @param type type of vehicle
+     */
+    void displayOpenSlots(String type) {
+        for (int i = 0; i < slots.size(); i++) {
+            for (int j = 0; j < slots.get(i).size(); j++) {
+                Slot slot = slots.get(i).get(j);
+                if (slot.getVehicle() == null && slot.getType().equals(type))
+                    System.out.println("Floor " + (i + 1) + " slot " + (j + 1));
+            }
+        }
+    }
+
+    /**
+     * Display all occupied slots for a vehicle type
+     * @param type type of vehicle
+     */
+    void displayOccupiedSlots(String type) {
+        for (int i = 0; i < slots.size(); i++) {
+            for (int j = 0; j < slots.get(i).size(); j++) {
+                Slot slot = slots.get(i).get(j);
+                if (slot.getVehicle() != null && slot.getType().equals(type))
+                    System.out.println("Floor " + (i + 1) + " slot " + (j + 1));
             }
         }
     }

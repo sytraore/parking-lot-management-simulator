@@ -5,7 +5,7 @@
  * @version 2024.09.06
  */
 
-public class Slot() {
+public class Slot(){
     
     private String type;
     private Vehicle vehicle;

@@ -6,7 +6,15 @@ public class ParkingLot {
     private String parkingLotId;
     private List<List<Slot>> slots;
 
-    public ParkingLot (String parkingLotId, int nfloors, int noOfSlotsPerFlr) {
+    /**
+     * @param parkingLotId
+     *      ID of the entire parking lot
+     * @param nfloors
+     *      number of floors
+     * @param slotsPerFlr
+     *      total number of slots per floor
+     */
+    public ParkingLot (String parkingLotId, int nfloors, int slotsPerFlr) {
         this.parkingLotId = parkingLotId;
         slots = new ArrayList<>();
         for (int i = 0; i < nfloors; i++) {
@@ -16,7 +24,7 @@ public class ParkingLot {
             floorSlots.add(new Slot("bike"));
             floorSlots.add(new Slot("bike"));
 
-            for (int j = 3; j < noOfSlotsPerFlr; j++) {
+            for (int j = 3, j < slotsPerFlr; j++) {
                 slots.get(i).add(new Slot("car"));
             }
         }

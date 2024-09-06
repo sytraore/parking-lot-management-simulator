@@ -20,8 +20,17 @@ public class Main{
      *      color of vehicle
      */
     public String parkVehicle(String type, String regNo, String color) {
-        private String generateTicketId(int flor, int slots){
-            return parkingLotId + " " + flr + " " + slots;
+        
+        /**
+         * Method to generate ticket ID
+         * 
+         * @param flr 
+         *      floor of parking slot
+         * @param slno
+         *      slot number of parking slot
+         */
+        private String generateTicketId(int flr, int slno) {
+            return parkingLotId + "_" + flr + "_" + slno;
         }
 
         Vehicle vehicle = new Vehicle(type, regNo, color);

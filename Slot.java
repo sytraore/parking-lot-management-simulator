@@ -5,26 +5,32 @@
  * @version 2024.09.06
  */
 
-public class Slot(){
+public class Slot{
     
     private String type;
     private Vehicle vehicle;
     private String ticketId;
 
-    public Slot(String type) {
+    public Slot(String type){
         this.type = type;
-        this.vehicle = null;
-        this.ticketId = null;
+        vehicle = null;
+        ticketId = null;
     }
 
-    // Getter for type of vehicle
+    public Slot(String type, Vehicle vehicle, String ticketId) {
+        this.type = type;
+        this.vehicle = vehicle;
+        this.ticketId = ticketId;
+    }
+
+    // Getter for type of slot
     public String getType() {
         return type;
     }
 
     // Setteer for type of vehicle
-    public String setType(String newType) {
-        this.type = newType;
+    public void setType(String newType){
+        type = newType;
     }
 
     // Getter for vehicle
@@ -33,7 +39,7 @@ public class Slot(){
     }
 
     // Setter for vehilce
-    public Vehilce setVehicle(Vehicle newVehicle) {
+    public void setVehicle(Vehicle newVehicle) {
         this.vehicle = newVehicle;
     }
 
@@ -43,7 +49,7 @@ public class Slot(){
     }
 
     //Setter for ticket ID
-    public String setTicketId(String newTicketId) {
+    public void setTicketId(String newTicketId) {
         this.ticketId = newTicketId;
     }
 }

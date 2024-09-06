@@ -40,6 +40,64 @@ public class ParkingLot {
         }
     }
 
-    
+       /**
+     * Method to find closest slot, occupy it, and assign ticketId to slot
+     * 
+     * @param type 
+     *      type of vehicle (truck, bike, car)
+     * @param regNo
+     *      registration number of vehicle
+     * @param color
+     *      color of vehicle
+     */
+    public String parkVehicle(String type, String regNo, String color) {
+
+        Vehicle vehicle = new Vehicle(type, regNo, color);
+
+        for (int i = 0; i < slots.size(); i++) {
+            for (int j = 0; j < slots.get(i).size(); j++) {
+                Slot slot = slots.get(i).get(j);
+                if (slot.getType() == type && slot.getVehicle() == null) {
+                    slot.setVehicle(vehicle);
+                    slot.setTicketId(generateTicketId(i + 1, j + 1));
+                    return slot.getTicketId();
+                }
+            }
+        }
+
+        System.out.println("No parking slot currently available for given type");
+        return null;
+    }
+
+            
+        /**
+         * Method to generate ticket ID
+         * 
+         * @param flr 
+         *      floor of parking slot
+         * @param slno
+         *      slot number of parking slot
+         */
+        private String generateTicketId(int flr, int slno) {
+            return parkingLotId + "_" + flr + "_" + slno;
+        }
+
+    // Method to unpark vehicles and mark slot available again
+    public void unPark(String ticketId) {
+        String[] extract = ticketId.split("_");
+        int flr_idx = Integer.parseInt(extract[1]) - 1;
+        int slot_idx = Integer.parseInt(extract[2]) - 1;
+
+        for (int i = 0; i < slots.size(); i++) {
+            for (int j = 0; j < slots.get(i).size(); j++) {
+                if (i == flr_idx && j == slot_idx) {
+                    Slot slot = slots.get(i).get(j);
+                    slot.setVehicle(null);
+                    slot.setTicketId(null);
+                    System.out.println("Unparked vehicle");
+                }
+            }
+        }
+    }
 
 }

@@ -104,7 +104,7 @@ public class ParkingLot {
      * @param type type of vehicle
      * @return number of open slots for a vehicle type
      */
-    int getNoOfOpenSlots(String type) {
+    public int getNoOfOpenSlots(String type) {
         int count = 0;
         for(List<Slot> floor: slots) {
             for (Slot slot: floor) {

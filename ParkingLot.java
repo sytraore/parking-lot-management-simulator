@@ -63,7 +63,7 @@ public class ParkingLot {
             }
         }
 
-        System.out.println("No parking slot currently available for given type");
+        System.out.println("No parking slots currently available for " + type + "s");
         return null;
     }
 
@@ -95,6 +95,8 @@ public class ParkingLot {
                 }
             }
         }
+
+        System.out.println("Submit a valid ticket ID");
     }
 
     // Display Options -----------------------------------------

@@ -34,7 +34,7 @@ public class ParkingLot {
             floorSlots.add(new Slot("bike"));
             floorSlots.add(new Slot("bike"));
 
-            for (int j = 3, j < slotsPerFlr; j++) {
+            for (int j = 3; j < slotsPerFlr; j++) {
                 slots.get(i).add(new Slot("car"));
             }
         }

@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParkingLot {
 
-    String parkingLotId;
-    List<List<Slot>> slots;
+    private String parkingLotId;
+    private List<List<Slot>> slots;
 
     public ParkingLot (String parkingLotId, int nfloors, int noOfSlotsPerFlr) {
         this.parkingLotId = parkingLotId;
@@ -13,9 +16,10 @@ public class ParkingLot {
             floorSlots.add(new Slot("bike"));
             floorSlots.add(new Slot("bike"));
 
-            for (int j = 3, j < noOfSlotsPerFlr; j++) {
+            for (int j = 3; j < noOfSlotsPerFlr; j++) {
                 slots.get(i).add(new Slot("car"));
             }
         }
     }
+    
 }

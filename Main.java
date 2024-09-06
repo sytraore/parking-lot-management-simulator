@@ -4,8 +4,8 @@ public class Main{
     }
 
     public String parkVehicle(String type, String regNo, String color) {
-        private String generateTicketId(int flor, int slno) {
-            return parkingLotId + " " + flr + " " + slno;
+        private String generateTicketId(int flor, int slots){
+            return parkingLotId + " " + flr + " " + slots;
         }
 
         Vehicle vehicle = new Vehicle(type, regNo, color);

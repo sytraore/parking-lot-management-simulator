@@ -29,12 +29,12 @@ public class ParkingLot {
         for (int i = 0; i < nfloors; i++) {
             slots.add(new ArrayList<>());
             List<Slot> floorSlots = slots.get(i);
-            floorSlots.add(new Slot("truck"));
-            floorSlots.add(new Slot("bike"));
-            floorSlots.add(new Slot("bike"));
+            floorSlots.add(new Slot("Truck"));
+            floorSlots.add(new Slot("Bike"));
+            floorSlots.add(new Slot("Bike"));
 
             for (int j = 3; j < slotsPerFlr; j++) {
-                slots.get(i).add(new Slot("car"));
+                slots.get(i).add(new Slot("Car"));
             }
         }
     }
@@ -85,7 +85,7 @@ public class ParkingLot {
 
                     String generatedTicketId = generateTicketId(i + 1, j + 1);
                     slot.setTicketId(generatedTicketId);
-                    System.out.println("Parked " + vehicleType + " at Floor "+ (i+1) + " slot number "+ (j+1));
+                    System.out.println("** Park " + vehicleType + " at Floor "+ (i+1) + " slot number "+ (j+1)+" **");
                     return slot.getTicketId();
                     
                 }
@@ -136,7 +136,7 @@ public class ParkingLot {
                     String type = slot.getVehicle().getType();
                     slot.setVehicle(null);
                     slot.setTicketId(null);
-                    System.out.println("Unparked "+ type);
+                    System.out.println("Unpark "+ type);
                 }
             }
         }
@@ -187,11 +187,11 @@ public class ParkingLot {
 
                 // if slot is free and the type of the slot matches the type of the vehicle, display position of slot
                 if (slot.getVehicle() == null && slot.getTypeOfSlot().equals(type)){
-                    System.out.println("Open slot at Floor " + (i + 1) + " slot number " + (j + 1));
+                    System.out.println("Open slot for "+ type+ "s at Floor " + (i + 1) + " slot number " + (j + 1));
                 }
-                else{
-                    System.out.println("No Parking at Floor " + (i + 1) + " slot number " + (j + 1)); 
-                }
+                // else{
+                //     System.out.println("No Parking at Floor " + (i + 1) + " slot number " + (j + 1)); 
+                // }
                     
             }
         }

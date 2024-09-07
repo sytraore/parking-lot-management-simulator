@@ -6,38 +6,72 @@
  */
 public class Main{
     public static void main(String[] args){
-        ParkingLot test1 = new ParkingLot("PR1234", 4, 6);
 
-        System.out.println("Number of open slots for cars: " + test1.openSlotsNumb("car"));
+        // user is prompt to enter vehicle type
+        // check if there is any open slot for vehicle type
+        // if yes, prompt user to enter vehicle registration number and color
+        // give parking ticket and all open slots positions
+        // else, display a no more slot message
+        // user can leave parking lot at any time by just typing "leave"
+        // "leave" => unpark vehicle
 
-        String ticket1 = test1.parkVehicle("car", "MH-03", "red");
-        String ticket2 = test1.parkVehicle("car", "MH-04", "purple");
 
-        System.out.println("Ticket 1: "+ ticket1);
-        System.out.println("Ticket 2: "+ ticket2);
+
+
+
+
+
+
+        // ParkingLot test1 = new ParkingLot("PR1234", 2, 4);
+
+        // String [] vehicleType = {"truck", "bike", "car"};
+
+        // System.out.println("Number of open slots for " + vehicleType[0] + ": " + test1.openSlotsNumb(vehicleType[0]));
+        // System.out.println("Number of open slots for " + vehicleType[1] + ": " + test1.openSlotsNumb(vehicleType[1]));
+        // System.out.println("Number of open slots for " + vehicleType[2] + ": " + test1.openSlotsNumb(vehicleType[2]) +"\n");
+
+        // String truckTicket1 = test1.parkVehicle(vehicleType[0], "MH-03", "red");
+        // String truckTicket2 = test1.parkVehicle(vehicleType[0], "MH-04", "purple");
+
+        // String carTicket1 = test1.parkVehicle(vehicleType[2], "AA-88", "blue");
+        // String carTicket2 = test1.parkVehicle(vehicleType[2], "AA-99", "orange");
+        
+        // String bikeTicket1 = test1.parkVehicle(vehicleType[1], "RR-11", "green");
+        // String bikeTicket2 = test1.parkVehicle(vehicleType[1], "AA-22", "pink");
+
+        // System.out.println();
+        
+
+        // // System.out.println("Ticket 1: "+ ticket1);
+        // // System.out.println("Ticket 2: "+ ticket2);
+
+
+        // System.out.println("Number of open slots for " + vehicleType[0] + ": " + test1.openSlotsNumb(vehicleType[0]));
+        // System.out.println("Number of open slots for " + vehicleType[1] + ": " + test1.openSlotsNumb(vehicleType[1]));
+        // System.out.println("Number of open slots for " + vehicleType[2] + ": " + test1.openSlotsNumb(vehicleType[2]) + "\n");
 
         
-        
-        
-        
-
-        // display open slots position for vehicle of type car
-        // test1.displayOpenSlotPositions("car");
-
-        // System.out.println("Number of open slots for cars: "+ test1.openSlotsNumb("car"));
-
-        // test1.unPark(ticket2);
-
-        // // display busy slots position for vehicle of type car
-        // test1.displayBusySlotsPositions("car");
-
         // // display open slots position for vehicle of type truck
-        // test1.displayOpenSlotPositions("truck");
+        // System.out.print(vehicleType[0]+"\n");
+        // test1.displayOpenSlotPositions(vehicleType[0]);
+        // System.out.println();
+        // System.out.print(vehicleType[1]+"\n");
+        // test1.displayOpenSlotPositions(vehicleType[1]);
+        // System.out.println();
+        // System.out.print(vehicleType[2]+"\n");
+        // test1.displayOpenSlotPositions(vehicleType[2]);
+        // System.out.println();
 
-        // test1.parkVehicle("truck", "MH-01", "black");
+        
+        // String truckTicket3 = test1.parkVehicle(vehicleType[0], "MA-66", "grey");
+        // String bikeTicket3 = test1.parkVehicle(vehicleType[1], "AB-66", "grey");
+        
 
-        // // display busy slots position for vehicle of type car
-        // test1.displayBusySlotsPositions("truck");
+        // test1.unPark(carTicket1);
+        // String carTicket3 = test1.parkVehicle(vehicleType[2], "AA-66", "grey");
+        // System.out.println("Number of open slots for " + vehicleType[2] + ": " + test1.openSlotsNumb(vehicleType[2]));
+
+
     }
 
 }

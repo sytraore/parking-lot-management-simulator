@@ -64,7 +64,7 @@ public class ParkingLot {
 
         // vehicle that needs to be parked
         Vehicle vehicle = new Vehicle(vehicleType, vehicleRegis, vehicleColor);
-        String ticket = "";
+        
 
         // go through all slots until an empty slot is found
         // first loop go through the ith floor
@@ -80,15 +80,20 @@ public class ParkingLot {
                 // vehicle is parked at slot[i][j] and a ticket ID is generated
                 // if no:
                 // print unavailability message
-                if (slot.getTypeOfSlot() == vehicleColor && slot.getVehicle() == null) {    
+                if (slot.getTypeOfSlot() == vehicleType && slot.getVehicle() == null) {    
                     slot.setVehicle(vehicle);
-                    slot.setTicketId(generateTicketId(i + 1, j + 1));
+
+                    String generatedTicketId = generateTicketId(i + 1, j + 1);
+                    slot.setTicketId(generatedTicketId);
+                    System.out.println("Parked " + vehicleType + " at Floor "+ (i+1) + " slot number "+ (j+1));
                     return slot.getTicketId();
                     
                 }
             }
         }
 
+        
+    
         System.out.println("No parking slots currently available for " + vehicleType + "s");
         return null;
         
@@ -128,14 +133,15 @@ public class ParkingLot {
             
                 if (i == flr_idx && j == slot_idx) {
                     Slot slot = slots.get(i).get(j);
+                    String type = slot.getVehicle().getType();
                     slot.setVehicle(null);
                     slot.setTicketId(null);
-                    System.out.println("Unparked vehicle");
+                    System.out.println("Unparked "+ type);
                 }
             }
         }
 
-        System.out.println("Submit a valid ticket ID");
+        
     }
 
     // Display Options -----------------------------------------
@@ -180,8 +186,13 @@ public class ParkingLot {
                 Slot slot = slots.get(i).get(j);
 
                 // if slot is free and the type of the slot matches the type of the vehicle, display position of slot
-                if (slot.getVehicle() == null && slot.getTypeOfSlot().equals(type))
+                if (slot.getVehicle() == null && slot.getTypeOfSlot().equals(type)){
                     System.out.println("Open slot at Floor " + (i + 1) + " slot number " + (j + 1));
+                }
+                else{
+                    System.out.println("No Parking at Floor " + (i + 1) + " slot number " + (j + 1)); 
+                }
+                    
             }
         }
     }
@@ -190,21 +201,21 @@ public class ParkingLot {
      * Display all occupied slots for a vehicle type
      * @param type type of vehicle
      */
-    public void displayBusySlotsPositions(String type) {
-        // go through all slots and print the position of busy slots
-        // first loop go through the ith floor
-        // second loop go through the slots of the ith floor
+    // public void displayBusySlotsPositions(String type) {
+    //     // go through all slots and print the position of busy slots
+    //     // first loop go through the ith floor
+    //     // second loop go through the slots of the ith floor
 
-        for (int i = 0; i < slots.size(); i++) {
+    //     for (int i = 0; i < slots.size(); i++) {
 
-            for (int j = 0; j < slots.get(i).size(); j++) {
+    //         for (int j = 0; j < slots.get(i).size(); j++) {
 
-                Slot slot = slots.get(i).get(j);
-                // if slot is not free and the type of the slot matches the type of the vehicle, display position of slot
-                if (slot.getVehicle() != null && slot.getTypeOfSlot().equals(type))
-                    System.out.println("Busy slot at Floor " + (i + 1) + " slot number " + (j + 1));
-            }
-        }
-    }
+    //             Slot slot = slots.get(i).get(j);
+    //             // if slot is not free and the type of the slot matches the type of the vehicle, display position of slot
+    //             if (slot.getVehicle() != null && slot.getTypeOfSlot().equals(type))
+    //                 System.out.println("Busy slot at Floor " + (i + 1) + " slot number " + (j + 1));
+    //         }
+    //     }
+    // }
 
 }

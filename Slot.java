@@ -7,30 +7,25 @@
 
 public class Slot{
     
-    private String type;
-    private Vehicle vehicle;
+    private String typeOfSlot;        // typeOfSlot represents the typeOfSlot of vehicle for a slot
+    private Vehicle vehicle;    
     private String ticketId;
 
-    public Slot(String type){
-        this.type = type;
+    public Slot(String typeOfSlot){
+        this.typeOfSlot = typeOfSlot;
         vehicle = null;
         ticketId = null;
     }
 
-    public Slot(String type, Vehicle vehicle, String ticketId) {
-        this.type = type;
-        this.vehicle = vehicle;
-        this.ticketId = ticketId;
+
+    // Getter of slot's type
+    public String getTypeOfSlot() {
+        return typeOfSlot;
     }
 
-    // Getter for type of slot
-    public String getType() {
-        return type;
-    }
-
-    // Setteer for type of vehicle
-    public void setType(String newType){
-        type = newType;
+    // Setter for slot's type
+    public void setTypeOfSlot(String newTypeOfSlot){
+     typeOfSlot = newTypeOfSlot;
     }
 
     // Getter for vehicle

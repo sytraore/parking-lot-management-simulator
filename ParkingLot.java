@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class for parking lots and has to be called for most info
+ * Class for parking lots and has to be called before use of most methods
  * 
  * @author Sy Traore and Byron Streit
  * @version 2024.09.06

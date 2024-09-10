@@ -4,7 +4,8 @@ import java.util.List;
 /**
  * Class for parking lots and has to be called before use of most methods
  * 
- * @author Sy Traore and Byron Streit
+ * @author Sy Traore
+ * @author Byron Streit
  * @version 2024.09.06
  */
 public class ParkingLot {

@@ -6,7 +6,8 @@ import java.util.HashMap;
 /**
  * Parking Lot Management Simulator
  * 
- * @author Sy Traore and Byron Streit
+ * @author Sy Traore
+ * @author Byron Streit
  * @version 2024.09.06
  */
 public class Main{
@@ -92,11 +93,11 @@ public class Main{
 
         // ********* User Interface ****************
 
-        // users is prompt to enter vehicle type
-        // check if there is any open slot for vehicle type
+        // users are prompted to enter vehicle type
+        // checks if there is any open slot for vehicle type
         // if yes, prompt users to enter vehicle registration number and color
         // give parking ticket + location of slot
-        // else, display a no more slot message
+        // else, displays a no more slot message
 
         // users can also unpark their vehicle
         // users will have to provide the registration number of the vehicle

@@ -1,7 +1,8 @@
 /**
  * Class for parking slots
  * 
- * @author Sy Traore and Byron Streit
+ * @author Sy Traore
+ * @author Byron Streit
  * @version 2024.09.06
  */
 
